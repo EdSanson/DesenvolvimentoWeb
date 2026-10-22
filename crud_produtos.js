@@ -75,13 +75,13 @@ app.get("/listar", function(req, res){
                             <td>${row.nome}</td>
                             <td>${row.quantidade}</td>
                             <td>${row.preco}</td>
-                            <td><a href="/deletar/${row.id}">Deletar</a></td>
-                            <td><a href="/atualizar-form/${row.id}">Alterar</a></td>
+                            <td><a href="/deletar/${row.id}">Excluir</a></td>
+                            <td><a href="/atualizar-form/${row.id}">Atualizar</a></td>
 
                             </tr>`).join('')}
                     </table>
                     <br><br>
-                         <a href="/">Cadastrar novo produto</a>
+                         <a href="/">Voltar ao Menu Principal</a>
                     </body>
 
                 </html>`);
@@ -119,11 +119,14 @@ app.post("/atualizar/:id", (req,res) => {
         function(err, result){
             if(!err){
                 console.log("Dados Atualizados com Sucesso!");
-                res.send("Dados Atualizados");
+                res.sendFile(__dirname+"/pg_inicialProdutos.html");
             } else {
                 console.log("Erro ao atualizar ", err);
                 res.status(500).send("Erro ao atualizar!");
+               
             }
+            
+             
         });
 });
 
@@ -166,6 +169,6 @@ app.get("/atualizar-form/:id", function(req,res){
             console.log("Erro ao obter dados do produto", err);
             res.status(500).send("Erro ao obter dados do produto")
         }
-    })
-})
+    });
+});
 

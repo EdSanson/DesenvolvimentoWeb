@@ -6,7 +6,7 @@ CREATE TABLE produtos(
 	id INT AUTO_INCREMENT PRIMARY KEY,
 	nome VARCHAR(100) NOT NULL,
     quantidade INT  NOT NULL,
-	preco DECIMAL(02) NOT NULL
+	preco DECIMAL(10,2) NOT NULL
 	);
 
 DESCRIBE produtos;
@@ -16,3 +16,5 @@ INSERT INTO produtos (nome, quantidade, preco) VALUES
 ('Monitor', 5, 50.00);
 
 SELECT * FROM produtos;
+
+ALTER TABLE produtos MODIFY preco DECIMAL(10,2) NOT NULL;
