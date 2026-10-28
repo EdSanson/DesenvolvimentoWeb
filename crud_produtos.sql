@@ -15,6 +15,7 @@ INSERT INTO produtos (nome, quantidade, preco) VALUES
 ('Bolsa', 10, 30.00),
 ('Monitor', 5, 50.00);
 
-SELECT * FROM produtos;
+SELECT * FROM alunos;
 
 ALTER TABLE produtos MODIFY preco DECIMAL(10,2) NOT NULL;
+

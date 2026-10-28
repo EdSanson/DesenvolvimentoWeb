@@ -36,7 +36,7 @@ app.post("/cadastrar", function(req, res){
     const nome = req.body.nome;
     const preco = req.body.preco;
     const quantidade = req.body.quantidade;
-
+    
     const values = [nome, quantidade, preco];
     const insert = 
         "INSERT INTO produtos (nome, quantidade, preco) VALUES(?, ?, ?)";
